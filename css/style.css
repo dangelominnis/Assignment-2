@@ -1,0 +1,374 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Setting global font to 62.5% which sets 1rem = 10px */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-tan);
+    font-family: 'Changa', sans-serif;
+}
+
+.container {
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+/* Variables */
+:root {
+    --color-tan: #f2ece7;
+    --color-gold: #b99279;
+    --color-black: #21282b;
+    --color-white: #ffffff;
+}
+
+.underline {
+    background-color: var(--color-black);
+    margin: auto;
+    width: 10rem;
+    height: 1rem;
+}
+
+/* Navigation Section */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid var(--color-black);
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--color-black);
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+
+}
+
+/* Logo */
+.logo {
+    font-size: 32px;
+}
+
+/* Navbar Menu */
+.menu {
+    display: flex;
+    gap: 1em;
+}
+
+/* .menu li:hover {
+    background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: 0.3s ease;
+} */
+
+.menu li {
+    padding: 5px 14px;
+}
+
+/* Dropdown Menu */
+.subtab {
+    position: relative; 
+}
+
+.dropdown {
+    background-color: rgb(1, 139, 139);
+    padding: 1em 0;
+    position: absolute; /*with respect to parent*/
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+}
+
+.dropdown li + li {
+    margin-top: 10px;
+}
+
+.dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+}
+
+.dropdown li:hover {
+    background-color: #4c9e9e;
+}
+
+.subtab:hover .dropdown {
+    display: block;
+}
+
+/*Responsive Nav Bar Start*/
+/* Checkbox Function */
+    input[type=checkbox]{
+    display: none;
+} 
+
+/*Hamburger Menu*/
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+/* Media Queries Nav */
+@media (max-width: 768px) {
+   .menu { 
+    display:none;
+    position: absolute;
+    background-color:teal;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+   }
+
+   .menu li:hover {
+    display: inline-block;
+    background-color:#4c9e9e;
+    transition: 0.3s ease;
+   }
+
+   .menu li + li {
+    margin-top: 12px;
+   }
+
+   input[type=checkbox]:checked ~ .menu{
+    display: block;
+   }
+
+   .hamburger {
+    display: block;
+   }
+
+   .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+   }
+
+   .dropdown li:hover {
+    background-color: #4c9e9e;
+   }
+}
+
+/* Header Section */
+.header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-size: cover;
+    z-index: 4;
+    position: relative;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /* background: rgba(0, 0, 0, 0.5);  */
+}
+
+.header h1 {
+    color: var(--color-black);
+    font-size: 8rem;
+    font-weight: 600;
+    margin-bottom: 0rem;
+}
+
+.header h1 span {
+    color: var(--color-gold);
+}
+
+.header h3 {
+    color: var(--color-black);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0rem;
+}
+
+.header p {
+    color: var(--color-black);
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: 2;
+    margin-bottom: 6rem;
+}
+
+.header-button {
+    margin-bottom: 2rem;
+}
+
+/* Directory Section */
+.directory {
+    border-top: 1px solid var(--color-black);
+    padding: 12rem 4rem;
+}
+
+.directory h2 {
+    color: var(--color-black);
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.directory h3 {
+    color: var(--color-black);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.directory .underline {
+    margin-bottom: 4rem;
+}
+
+.directory-tab-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/* Style tab links */
+.tablink {
+    background-color: transparent;
+    border: 1px solid var(--color-black);
+    color: black;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 1.25rem 2rem;
+    border-radius: 46px;
+    font-family: inherit;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+  
+.tablink:hover {
+    background-color: var(--color-black);
+    color: white;
+}
+
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+/* Overview Section */
+.overview-section {
+    background-color: var(--color-black);
+    padding: 8rem;
+    border-radius: 24px;
+}
+
+.overview-section h2 {
+    color: var(--color-white);
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.overview-section p {
+    color: var(--color-white);
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: 2;
+    margin-bottom: 4rem;
+}
+
+/* .overview-section p:nth-child(3) {
+    margin-bottom: 0rem;
+} */
+
+/* Losing Info Section */
+.losing-info-section {
+    background-color: var(--color-black);
+    padding: 8rem;
+    border-radius: 24px;
+}
+
+.losing-info-section h2 {
+    color: var(--color-white);
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.losing-info-section h3 {
+    text-align: left;
+}
+
+.losing-info-section p {
+    color: var(--color-white);
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: 2;
+    margin-bottom: 4rem;
+}
+
+/* .losing-info-section p:nth-child(5) {
+    margin-bottom: 0rem;
+} */
+
+.losing-info-box {
+    border: 1px solid var(--color-white);
+    border-radius: 12px;
+    padding: 4rem;
+    margin-bottom: 4rem;
+}
+
+.losing-info-box h3 {
+    color: var(--color-white);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.losing-info-box h4 {
+    color: var(--color-white);
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: .5px;
+    line-height: 2;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* .losing-info-box h4:nth-child() {
+    margin-bottom: none;
+} */
+
+.losing-info-box img {
+    width: 50%;
+    height: auto;
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <!-- Cormorant -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Varela Round -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <!-- Changa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <title>A Proposal | Tim Berners-Lee</title>
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">TBL Proposal</div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+            <li><a href="#directory" class="btn-black-transparent">View Proposal</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header">
+        <div class="container">
+            <h3>Tim Berners-Lee, CERN<br>March 1989, May 1990</h3>
+            <h1>Information Management: <span>A Proposal</span></h1>
+            <p>This proposal concerns the management of general information about accelerators and experiments at CERN. It discusses the problems of loss of information about complex evolving systems and derives a solution based on a distributed hypertext system.</p>
+            <div class="header-button">
+                <a href="#directory" class="btn-black-transparent">View Proposal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directory Section -->
+    <section class="directory" id="directory">
+        <div class="container">
+            <h2>Article Contents</h2>
+            <h3>Pick the one of your choosing</h3>
+            <div class="underline"></div>
+            <div class="directory-tab-box">
+                <button class="tablink" onclick="openPage('Overview', this, '')">Overview</button>
+                <button class="tablink" onclick="openPage('Losing Info', this, '')">Losing Info</button>
+                <button class="tablink" onclick="openPage('Linked Info', this, '')">Linked Info</button>
+                <button class="tablink" onclick="openPage('Tree Problems', this, '')">Tree Problems</button>
+                <button class="tablink" onclick="openPage('Keyword Problems', this, '')">Keyword Problems</button>
+                <button class="tablink" onclick="openPage('Solution: Hypertext', this, '')">Solution: Hypertext</button>
+                <button class="tablink" onclick="openPage('CERN Requirements', this, '')">CERN Requirements</button>
+                <button class="tablink" onclick="openPage('Accessing Data', this, '')">Accessing Data</button>
+                <button class="tablink" onclick="openPage('Conclusion', this, '')">Conclusion</button>
+                <button class="tablink" onclick="openPage('References', this, '')">References</button>
+            </div>
+            <div class="directory-tab-info">
+
+                <!-- Overview Section -->
+                <div id="Overview" class="tabcontent">
+                    <div class="overview-section">
+                        <h2>Overview</h2>
+                        <p>Many of the discussions of the future at CERN and the LHC era end with the question - Yes, but how will we ever keep track of such a large project? This proposal provides an answer to such questions. Firstly, it discusses the problem of information access at CERN. Then, it introduces the idea of linked information systems, and compares them with less flexible ways of finding information.</p>
+                        <p>It then summarises my short experience with non-linear text systems known as hypertext, describes what CERN needs from such a system, and what industry may provide.</p>
+                        <div class="losing-info-box">
+                            <h3>Finally, it suggests steps we should take to involve ourselves with hypertext now, so that individually and collectively we may understand what we are creating.</h3>
+                            <img src="img/overview-image.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Losing Info Section -->
+                <div id="Losing Info" class="tabcontent">
+                    <div class="losing-info-section">
+                        <h2>Losing Information at CERN</h2>
+                        <p>CERN is a wonderful organisation. It involves several thousand people, many of them very creative, all working toward common goals. Although they are nominally organised into a hierarchical management structure,this does not constrain the way people will communicate, and share information, equipment and software across groups.</p>
+                        <p>The actual observed working structure of the organisation is a multiply connected "web" whose interconnections evolve with time. In this environment, a new person arriving, or someone taking on a new task, is normally given a few hints as to who would be useful people to talk to. Information about what facilities exist and how to find out about them travels in the corridor gossip and occasional newsletters, and the details about what is required to be done spread in a similar way. All things considered, the result is remarkably successful, despite occasional misunderstandings and duplicated effort.</p>
+                        <p>A problem, however, is the high turnover of people. When two years is a typical length of stay, information is constantly being lost. The introduction of the new people demands a fair amount of their time and that of others before they have any idea of what goes on. The technical details of past projects are sometimes lost forever, or only recovered after a detective investigation in an emergency. Often, the information has been recorded, it just cannot be found.</p>
+                        <p>If a CERN experiment were a static once-only development, all the information could be written in a big book. As it is, CERN is constantly changing as new ideas are produced, as new technology becomes available, and in order to get around unforeseen technical problems. When a change is necessary, it normally affects only a small part of the organisation. A local reason arises for changing a part of the experiment or detector. At this point, one has to dig around to find out what other parts and people will be affected. Keeping a book up to date becomes impractical, and the structure of the book needs to be constantly revised.</p>
+                        <div class="losing-info-box">
+                            <h3>The sort of information we are discussing answers, for example, questions like:</h3>
+                            <h4>Where is this module used?</h4>
+                            <h4>Who wrote this code? Where does he work?</h4>
+                            <h4>What documents exist about that concept?</h4>
+                            <h4>Which laboratories are included in that project?</h4>
+                            <h4>Which systems depend on this device?</h4>
+                            <h4>What documents refer to this one?</h4>
+                        </div>
+                        <p>The problems of information loss may be particularly acute at CERN, but in this case (as in certain others), CERN is a model in miniature of the rest of world in a few years time. CERN meets now some problems which the rest of the world will have to face soon. In 10 years, there may be many commercial solutions to the problems above, while today we need something to allow us to continue.</p>
+                    </div>
+                </div>
+
+                <!-- Linked Info Section -->
+                <div id="Linked Info" class="tabcontent">
+                    <div class="losing-info-section">
+                        <h2>Linked Information Systems</h2>
+                        <p>In providing a system for manipulating this sort of information, the hope would be to allow a pool of information to develop which could grow and evolve with the organisation and the projects it describes. For this to be possible, the method of storage must not place its own restraints on the information. This is why a "web" of notes with links (like references) between them is far more useful than a fixed hierarchical system. When describing a complex system, many people resort to diagrams with circles and arrows. Circles and arrows leave one free to describe the interrelationships between things in a way that tables, for example, do not. The system we need is like a diagram of circles and arrows, where circles and arrows can stand for anything.</p>
+                        <p>We can call the circles nodes, and the arrows links. Suppose each node is like a small note, summary article, or comment. I'm not over concerned here with whether it has text or graphics or both. Ideally, it represents or describes one particular person or object. </p>
+                        <div class="losing-info-box">
+                            <h3>Examples of nodes can be:</h3>
+                            <h4>People</h4>
+                            <h4>Software modules</h4>
+                            <h4>Groups of people</h4>
+                            <h4>Projects</h4>
+                            <h4>Concepts</h4>
+                            <h4>Documents</h4>
+                            <h4>Types of hardware</h4>
+                            <h4>Specific hardware objects</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>The arrows which links circle A to circle B can mean, for example, that A...</h3>
+                            <h4>depends on B</h4>
+                            <h4>is part of B</h4>
+                            <h4>made B</h4>
+                            <h4>refers to B</h4>
+                            <h4>uses B</h4>
+                            <h4>is an example of B</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>These circles and arrows, nodes and links, have different significance in various sorts of conventional diagrams:</h3>
+                            <img src="img/linked-image.png" alt="">
+                        </div>
+                        <p>The system must allow any sort of information to be entered. Another person must be able to find the information, sometimes without knowing what he is looking for. In practice, it is useful for the system to be aware of the generic types of the links between items (dependences, for example), and the types of nodes (people, things, documents..) without imposing any limitations.</p>
+                    </div>
+                </div>
+
+                <!-- Tree Problems Section -->
+                <div id="Tree Problems" class="tabcontent">
+                    <div class="losing-info-section">
+                        <h2>The Problem With Trees</h2>
+                        <p>Many systems are organised hierarchically. The CERNDOC documentation system is an example, as is the Unix file system, and the VMS/HELP system. A tree has the practical advantage of giving every node a unique name. However, it does not allow the system to model the real world.</p>
+                        <div class="losing-info-box">
+                            <h3>For example, in a hierarchical HELP system such as VMS/HELP, one often gets to a leaf on a tree such as:
+                            </h3>
+                            <h4>HELP COMPILER SOURCE_FORMAT PRAGMAS DEFAULTS</h4>
+                            <p>only to find a reference to another leaf: "Please see</p>
+                            <h4>HELP COMPILER COMMAND OPTIONS DEFAULTS PRAGMAS"</h4>
+                            <p>and it is necessary to leave the system and re-enter it. What was needed was a link from one node to another, because in this case the information was not naturally organised into a tree.</p>
+                        </div>
+                        <p>Another example of a tree-structured system is the uucp News system (try 'rn' under Unix). This is a hierarchical system of discussions ("newsgroups") each containing articles contributed by many people. It is a very useful method of pooling expertise, but suffers from the inflexibility of a tree.</p>
+                        <div class="losing-info-box">
+                            <h3>Typically, a discussion under one newsgroup will develop into a different topic, at which point it ought to be in a different part of the tree. (See Fig 1).</h3>
+                            <img src="img/tree-image.png" alt="">
+                            <h4>Fig 1. An article in the UUCP News scheme.</h4>
+                            <h4>The Subject field allows notes on the same topic to be linked together within a "newsgroup". The name of the newsgroup (alt.hypertext) is a hierarchical name. This particular note is expresses a problem with the strict tree structure of the scheme: this discussion is related to several areas. Note that the "References", "From" and "Subject" fields can all be used to generate links.</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keyword Problems Section -->
+                <div id="Keyword Problems" class="tabcontent">
+                    <div class="losing-info-section">
+                        <h2>The Problem With Keywords</h2>
+                        <p>Keywords are a common method of accessing data for which one does not have the exact coordinates. The usual problem with keywords, however, is that two people never chose the same keywords. The keywords then become useful only to people who already know the application well.</p>
+                        <p>Practical keyword systems (such as that of VAX/NOTES for example) require keywords to be registered. This is already a step in the right direction. A linked system takes this to the next logical step. Keywords can be nodes which stand for a concept. A keyword node is then no different from any other node. One can link documents, etc., to keywords. One can then find keywords by finding any node to which they are related. In this way, documents on similar topics are indirectly linked, through their key concepts. A keyword search then becomes a search starting from a small number of named nodes, and finding nodes which are close to all of them.</p>
+                        <p>It was for these reasons that I first made a small linked information system, not realising that a term had already been coined for the idea: "hypertext".</p>
+                    </div>
+                </div>
+
+                <!-- Solution: Hypertext Section -->
+                <div id="Solution: Hypertext" class="tabcontent">
+                    <div class="losing-info-section">
+                        <h2>A Solution: Hypertext</h2>
+                        <h3 style="color: white;">Personal Experience With Hypertext</h3>
+                        <p>In 1980, I wrote a program for keeping track of software with which I was involved in the PS control system. Called Enquire, it allowed one to store snippets of information, and to link related pieces together in any way. To find information, one progressed via the links from one sheet to another, rather like in the old computer game "adventure". I used this for my personal record of people and modules. It was similar to the application Hypercard produced more recently by Apple for the Macintosh.</p>
+                        <div class="losing-info-box">
+                            <h3>A difference was that Enquire, although lacking the fancy graphics, ran on a multiuser system, and allowed many people to access the same data.</h3>
+                            <img src="img/solution-image.png" alt="">
+                            <h4>Fig 2. A screen in an Enquire scheme.</h4>
+                        </div>
+                        <p>This example is basically a list, so the list of links is more important than the text on the node itself. Note that each link has a type ("includes" for example) and may also have comment associated with it. (The bottom line is a menu bar.)</p>
+                        <p>Soon after my re-arrival at CERN in the DD division, I found that the environment was similar to that in PS, and I missed Enquire. I therefore produced a version for the VMS, and have used it to keep track of projects, people, groups, experiments, software modules and hardware devices with which I have worked. I have found it personally very useful. I have made no effort to make it suitable for general consumption, but have found that a few people have successfully used it to browse through the projects and find out all sorts of things of their own accord.</p>
+                        <h3 style="color: white;">Hotspots</h3>
+                        <p>Meanwhile, several programs have been made exploring these ideas, both commercially and academically. Most of them use "hot spots" in documents, like icons, or highlighted phrases, as sensitive areas. touching a hot spot with a mouse brings up the relevant information, or expands the text on the screen to include it. Imagine, then, the references in this document, all being associated with the network address of the thing to which they referred, so that while reading this document you could skip to them with a click of the mouse.</p>
+                        <p>"Hypertext" is a term coined in the 1950s by Ted Nelson [...], which has become popular for these systems, although it is used to embrace two different ideas. One idea (which is relevant to this problem) is the concept: "Hypertext": Human-readable information linked together in an unconstrained way.</p>
+                        <p>The other idea, which is independent and largely a question of technology and time, is of multimedia documents which include graphics, speech and video. I will not discuss this latter aspect further here, although I will use the word "Hypermedia" to indicate that one is not bound to text.</p>
+                        <p>It has been difficult to assess the effect of a large hypermedia system on an organisation, often because these systems never had seriously large-scale use. For this reason, we require large amounts of existing information should be accessible using any new information management system.</p>
+                    </div>
+                </div>
+
+                <!-- CERN Requirements Section -->
+                <div id="CERN Requirements" class="tabcontent">
+                    <div class="losing-info-section">
+                        <h2>CERN Requirements</h2>
+                        <p>To be a practical system in the CERN environment, there are a number of clear practical requirements.</p>
+                        <div class="losing-info-box">
+                            <h3>Remote access across networks.</h3>
+                            <h4>CERN is distributed, and access from remote machines is essential.</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>Heterogeneity</h3>
+                            <h4>Access is required to the same data from different types of system (VM/CMS, Macintosh, VAX/VMS, Unix)</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>Non-Centralisation</h3>
+                            <h4>Information systems start small and grow. They also start isolated and then merge. A new system must allow existing systems to be linked together without requiring any central control or coordination.</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>Access to existing data</h3>
+                            <h4>If we provide access to existing databases as though they were in hypertext form, the system will get off the ground quicker. This is discussed further below.</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>Private links</h3>
+                            <h4>One must be able to add one's own private links to and from public information. One must also be able to annotate links, as well as nodes, privately.</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>Bells and Whistles</h3>
+                            <h4>Storage of ASCII text, and display on 24x80 screens, is in the short term sufficient, and essential. Addition of graphics would be an optional extra with very much less penetration for the moment.</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>Data analysis</h3>
+                            <h4>An intriguing possibility, given a large hypertext database with typed links, is that it allows some degree of automatic analysis. It is possible to search, for example, for anomalies such as undocumented software or divisions which contain no people. It is possible to generate lists of people or devices for other purposes, such as mailing lists of people to be informed of changes. It is also possible to look at the topology of an organisation or a project, and draw conclusions about how it should be managed, and how it could evolve. This is particularly useful when the database becomes very large, and groups of projects, for example, so interwoven as to make it difficult to see the wood for the trees.</h4>
+                            <h4>In a complex place like CERN, it's not always obvious how to divide people into groups. Imagine making a large three-dimensional model, with people represented by little spheres, and strings between people who have something in common at work.</h4>
+                            <h4>Now imagine picking up the structure and shaking it, until you make some sense of the tangle: perhaps, you see tightly knit groups in some places, and in some places weak areas of communication spanned by only a few people. Perhaps a linked information system will allow us to see the real structure of the organisation in which we work.</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>Live links</h3>
+                            <h4>The data to which a link (or a hot spot) refers may be very static, or it may be temporary. In many cases at CERN information about the state of systems is changing all the time. Hypertext allows documents to be linked into "live" data so that every time the link is followed, the information is retrieved. If one sacrifices portability, it is possible so make following a link fire up a special application, so that diagnostic programs, for example, could be linked directly into the maintenance guide.</h4>
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>Non requirements</h3>
+                            <h4>Discussions on Hypertext have sometimes tackled the problem of copyright enforcement and data security. These are of secondary importance at CERN, where information exchange is still more important than secrecy. Authorisation and accounting systems for hypertext could conceivably be designed which are very sophisticated, but they are not proposed here.</h4>
+                            <h4>In cases where reference must be made to data which is in fact protected, existing file protection systems should be sufficient.</h4>
+                        </div>
+                        <h3 style="color: white;">Specific Applications</h3>
+
+                    </div>
+                </div>
+
+                <!-- Accessing Data Section -->
+                <div id="Accessing Data" class="tabcontent">
+                    <div class="losing-info-section">
+                        <h2>Accessing Existing Data</h2>
+                        <p>The system must achieve a critical usefulness early on. Existing hypertext systems have had to justify themselves solely on new data. If, however, there was an existing base of data of personnel, for example, to which new data could be linked, the value of each new piece of data would be greater.</p>
+                        <p>What is required is a gateway program which will map an existing structure onto the hypertext model, and allow limited (perhaps read-only) access to it. This takes the form of a hypertext server written to provide existing information in a form matching the standard interface.</p>
+                        <div class="losing-info-box">
+                            <h3>One would not imagine the server actually generating a hypertext database from and existing one: rather, it would generate a hypertext view of an existing database.
+                            </h3>
+                            <img src="img/existing-data-image.png" alt="">
+                        </div>
+                        <div class="losing-info-box">
+                            <h3>The arrows which links circle A to circle B can mean, for example, that A...</h3>
+                            <h4>depends on B</h4>
+                            <h4>is part of B</h4>
+                            <h4>made B</h4>
+                            <h4>refers to B</h4>
+                            <h4>uses B</h4>
+                            <h4>is an example of B</h4>
+                        </div>
+                        <p>In some cases, writing these servers would mean unscrambling or obtaining details of the existing protocols and/or file formats. It may not be practical to provide the full functionality of the original system through hypertext. In general, it will be more important to allow read access to the general public: it may be that there is a limited number of people who are providing the information, and that they are content to use the existing facilities.</p>
+                        <p>It is sometimes possible to enhance an existing storage system by coding hypertext information in, if one knows that a server will be generating a hypertext representation. In 'news' articles, for example, one could use (in the text) a standard format for a reference to another article. This would be picked out by the hypertext gateway and used to generate a link to that note. This sort of enhancement will allow greater integration between old and new systems.</p>
+                        <p>There will always be a large number of information management systems - we get a lot of added usefulness from being able to cross-link them. However, we will lose out if we try to constrain them, as we will exclude systems and hamper the evolution of hypertext in general.</p>
+                    </div>
+                </div>
+
+                <!-- Conclusion Section -->
+                <div id="Conclusion" class="tabcontent">
+                    <div class="losing-info-section">
+                        <h2>Conclusion</h2>
+                        <p>We should work toward a universal linked information system, in which generality and portability are more important than fancy graphics techniques and complex extra facilities.</p>
+                        <p>The aim would be to allow a place to be found for any information or reference which one felt was important, and a way of finding it afterwards. The result should be sufficiently attractive to use that it the information contained would grow past a critical threshold, so that the usefulness the scheme would in turn encourage its increased use.</p>
+                        <p>The passing of this threshold accelerated by allowing large existing databases to be linked together and with new ones.</p>
+                        <h3 style="color: white;">A Practical Project</h3>
+                        <div class="losing-info-box">
+                            <h3>Here I suggest the practical steps to go to in order to find a real solution at CERN. After a preliminary discussion of the requirements listed above, a survey of what is available from industry is obviously required. At this stage, we will be looking for a systems which are future-proof:</h3>
+                            <h4>portable, or supported on many platforms,</h4>
+                            <h4>Extendible to new data formats.</h4>
+                        </div>
+                        <p>We may find that with a little adaptation, pars of the system we need can be combined from various sources: for example, a browser from one source with a database from another. I imagine that two people for 6 to 12 months would be sufficient for this phase of the project.</p>
+                        <p>A second phase would almost certainly involve some programming in order to set up a real system at CERN on many machines. An important part of this, discussed below, is the integration of a hypertext system with existing data, so as to provide a universal system, and to achieve critical usefulness at an early stage.</p>
+                        <p>(... and yes, this would provide an excellent project with which to try our new object oriented programming techniques!) TBL March 1989, May 1990</p>
+                    </div>
+                </div>
+
+                <!-- References Section -->
+                <div id="References" class="tabcontent">
+                    <div class="losing-info-section">
+                        <h2>References</h2>
+                        <p>[NEL67] <br>
+                            Nelson, T.H. "Getting it out of our system" in Information Retrieval: A Critical Review", G. Schechter, ed. Thomson Books, Washington D.C., 1967, 191-210</p>
+                        <p>[SMISH88] <br>
+                            Smish, J.B and Weiss, S.F,"An Overview of Hypertext",in Communications of the ACM, July 1988 Vol 31, No. 7,and other articles in the same special "Hypertext" issue.</p>
+                        <p>[CAMP88] <br>
+                            Campbell, B and Goodman, J,"HAM: a general purpose Hypertext Abstract Machine",in Communications of the ACM July 1988 Vol 31, No. 7</p>
+                        <p>[ASKCYN88] <br>
+                            Akscyn, R.M, McCracken, D and Yoder E.A,"KMS: A distributed hypermedia system for managing knowledge in originations", in Communications of the ACM , July 1988 Vol 31, No. 7</p>
+                        <p>[HYP88] <br>
+                            Hypertext on Hypertext, a hypertext version of the special Comms of the ACM edition, is avialble from the ACM for the Macintosh or PC.</p>
+                        <p>[RN] <br>
+                            Under unix, type man rn to find out about the rn command which is used for reading uucp news.</p>
+                        <p>[NOTES] <br>
+                            Under VMS, type HELP NOTES to find out about the VAX/NOTES system</p>
+                        <p>[CERNDOC] <br>
+                            On CERNVM, type FIND DOCFIND for infrmation about how to access the CERNDOC programs.</p>
+                        <p>[NIST90] <br>
+                            J. Moline et. al. (ed.) Proceedings of the Hypertext Standardisation Workshop January 16-18, 1990, National Institute of Standards and Technology, pub. U.S. Dept. of Commerce</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Javascript -->
+    <script>
+        function openPage(pageName,elmnt,color) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+          }
+          document.getElementById(pageName).style.display = "block";
+          elmnt.style.backgroundColor = color;
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+    
+</body>
+</html>
